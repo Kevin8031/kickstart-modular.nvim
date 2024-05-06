@@ -29,6 +29,5 @@ vim.keymap.set('v', 'L', '$')
 vim.keymap.set('n', '<leader>pe', vim.cmd.Ex, { desc = '[P]roject [E]xplore (Open Netrw)' })
 vim.keymap.set('n', '<leader>pE', vim.cmd.Vex, { desc = '[P]roject V[E]xplore (Open Netrw in side view)' })
 
--- Tabby keymaps
-vim.g.tabby_keybinding_accept = '<S-Tab>'
-vim.g.tabby_keybinding_trigger_or_dismiss = '<C-S-Tab>'
+-- Close buffer
+vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[B]uffer [D]elete' })
