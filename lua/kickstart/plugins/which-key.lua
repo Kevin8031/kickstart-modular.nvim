@@ -32,10 +32,6 @@ return {
         ['<leader>g'] = { name = '[G]it', _ = 'which_key_ignore' },
         ['<leader>b'] = { name = 'Vim [B]uffer', _ = 'which_key_ignore' },
       }
-      -- visual mode
-      require('which-key').register({
-        ['<leader>h'] = { 'Git [H]unk' },
-      }, { mode = 'v' })
     end,
   },
 }
