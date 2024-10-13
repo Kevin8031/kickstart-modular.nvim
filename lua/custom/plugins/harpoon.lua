@@ -7,7 +7,11 @@ return {
     local harpoon = require 'harpoon'
 
     -- REQUIRED
-    harpoon:setup()
+    harpoon:setup {
+      settings = {
+        sync_on_ui_close = true,
+      },
+    }
     -- REQUIRED
 
     vim.keymap.set('n', '<leader>a', function()
