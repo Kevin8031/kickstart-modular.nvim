@@ -20,7 +20,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 -- vim.schedule(function()
---   vim.opt.clipboard = 'unnamedplus'
+--    vim.opt.clipboard = 'unnamedplus'
 -- end)
 
 -- Enable break indent
@@ -40,7 +40,6 @@ vim.opt.signcolumn = 'yes'
 vim.opt.updatetime = 250
 
 -- Decrease mapped sequence wait time
--- Displays which-key popup sooner
 vim.opt.timeoutlen = 300
 
 -- Configure how new splits should be opened
