@@ -1,6 +1,7 @@
 -- Custom keymaps
 require 'custom.keymaps.telescope'
 require 'custom.keymaps.lsp'
+require 'custom.keymaps.git-worktree'
 
 -- Capital J and K to move selection up and down lines
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
