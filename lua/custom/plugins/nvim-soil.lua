@@ -29,7 +29,7 @@ return {
       -- return "feh " .. img
       -- return "xdg-open " .. img
       execute_to_open = function(img)
-        return 'xdg-open ' .. img
+        return 'feh ' .. img
       end,
     },
   },
