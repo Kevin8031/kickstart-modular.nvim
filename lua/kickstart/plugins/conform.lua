@@ -33,6 +33,7 @@ return {
         lua = { 'stylua' },
         html = { 'prettier' },
         json = { 'jq' },
+        sql = { 'sqlfluf' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
