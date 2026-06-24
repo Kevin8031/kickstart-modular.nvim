@@ -33,3 +33,25 @@ vim.keymap.set('n', '<leader>pE', vim.cmd.Vex, { desc = '[P]roject V[E]xplore (O
 
 -- Close buffer
 vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[B]uffer [D]elete' })
+
+function InsertMarkdownURL()
+  local url = vim.fn.getreg '+'
+  if url == '' then return end
+  local cmd = 'curl -L ' .. vim.fn.shellescape(url) .. ' 2>/dev/null'
+  local handle = io.popen(cmd)
+  if not handle then return end
+  local html = handle:read '*a'
+  handle:close()
+  local title = ''
+  local pattern = '<title>(.-)</title>'
+  local m = string.match(html, pattern)
+  if m then title = m end
+  if title ~= '' then
+    local markdownLink = '[' .. title .. '](' .. url .. ')'
+    vim.api.nvim_command("call append(line('.'), '" .. markdownLink .. "')")
+  else
+    print 'Title not found for link'
+  end
+end
+
+vim.keymap.set('n', '<leader>lg', ':lua InsertMarkdownURL()<CR>', { silent = true, noremap = true })
