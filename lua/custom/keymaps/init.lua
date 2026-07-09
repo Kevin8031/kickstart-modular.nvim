@@ -54,7 +54,7 @@ function InsertMarkdownURL()
   end
 end
 
-vim.keymap.set('n', '<leader>lg', ':lua InsertMarkdownURL()<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>lg', ':lua InsertMarkdownURL()<CR>', { silent = true, noremap = true, desc = '[L]ink [G]et Title' })
 
 vim.keymap.set('n', '<leader>wj', function()
   -- gets the current file name without extension
