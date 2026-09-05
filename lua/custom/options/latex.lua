@@ -7,6 +7,3 @@ require('render_latex').setup {
     hide_on_cmdline = false,
   },
 }
-
-vim.opt.conceallevel = 2
-vim.opt.concealcursor = 'nc'
