@@ -1,6 +1,6 @@
 require('render-markdown').setup {
   latex = {
-    enabled = false,
+    enabled = true,
     render_modes = false,
     converter = { 'utftex', 'latex2text' },
     inline = true,
