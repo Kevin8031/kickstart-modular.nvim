@@ -5,7 +5,7 @@ return {
     -- wiki.vim configuration goes here, e.g.
     vim.g.wiki_root = '~/Syncthing/notes/'
     vim.g.wiki_export = {
-      args = '--pdf-engine=xelatex',
+      args = '--pdf-engine=xelatex -V "mainfont:Inter"',
       from_format = 'markdown',
       ext = 'pdf',
       view = true,
