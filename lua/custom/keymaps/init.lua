@@ -38,7 +38,13 @@ vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[B]uffer [D]elete' 
 function InsertMarkdownURL()
   local url = vim.fn.getreg '+'
   if url == '' then return end
-  local cmd = 'curl -L ' .. vim.fn.shellescape(url) .. ' 2>/dev/null'
+
+  if string.match(url, '[a-z]*://[^ >,;]*') == nil then
+    print('"' .. url .. '" is not a valid URL')
+    return
+  end
+
+  local cmd = 'curl --connect-timeout 3 -L ' .. vim.fn.shellescape(url) .. ' 2>/dev/null'
   local handle = io.popen(cmd)
   if not handle then return end
   local html = handle:read '*a'
