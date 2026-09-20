@@ -1,7 +1,7 @@
-return {
-  'tpope/vim-fugitive',
-  config = function()
-    -- Set mapping to open git
-    vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })
-  end,
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'tpope/vim-fugitive',
 }
+
+vim.keymap.set('n', '<leader>gs', vim.cmd.Git, { desc = '[G]it [S]tatus' })

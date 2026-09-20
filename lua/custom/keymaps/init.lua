@@ -8,7 +8,17 @@ require 'custom.keymaps.wiki'
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
-vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, { desc = 'Open [U]ndotree window' })
+vim.keymap.set(
+  'n',
+  '<leader>u',
+  function()
+    require('undotree').open {
+      title = 'undotree',
+      command = 'topleft 30vnew',
+    }
+  end,
+  { desc = 'Open [U]ndotree window' }
+)
 
 -- Copies to system clipboard
 vim.keymap.set('n', '<C-y>', '"+y')

@@ -1,7 +1,6 @@
-return {
-  'gbprod/nord.nvim',
-  config = function()
-    priority = 1000 -- Make sure to load this before all the other start plugins.
-    vim.cmd.colorscheme 'nord'
-  end,
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'gbprod/nord.nvim',
 }
+vim.cmd.colorscheme 'nord'

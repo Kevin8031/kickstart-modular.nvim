@@ -1,15 +1,14 @@
-return {
-  'lervag/wiki.vim',
-  -- tag = "v0.10", -- uncomment to pin to a specific release
-  init = function()
-    -- wiki.vim configuration goes here, e.g.
-    vim.g.wiki_root = '~/Syncthing/notes/'
-    vim.g.wiki_export = {
-      args = '--pdf-engine=xelatex -V "mainfont:Inter"',
-      from_format = 'markdown',
-      ext = 'pdf',
-      view = true,
-      viewer = 'zathura',
-    }
-  end,
+local function gh(repo) return 'https://github.com/' .. repo end
+
+vim.pack.add {
+  gh 'lervag/wiki.vim',
+}
+
+vim.g.wiki_root = '~/Syncthing/notes/'
+vim.g.wiki_export = {
+  args = '--pdf-engine=xelatex -V "mainfont:Inter"',
+  from_format = 'markdown',
+  ext = 'pdf',
+  view = true,
+  viewer = 'zathura',
 }
