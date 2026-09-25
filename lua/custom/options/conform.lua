@@ -6,8 +6,8 @@ require('conform').setup {
   end,
 
   formatters_by_ft = {
-    markdown = { 'prettier' },
-    jsonc = { 'prettier' },
+    markdown = { 'prettierd' },
+    jsonc = { 'prettierd' },
   },
 }
 
