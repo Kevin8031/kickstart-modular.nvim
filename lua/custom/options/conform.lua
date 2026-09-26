@@ -29,3 +29,8 @@ vim.api.nvim_create_user_command('ConformEnable', function()
 end, {
   desc = 'Re-enable autoformat-on-save',
 })
+
+-- Kill prettierd on exit
+vim.api.nvim_create_autocmd('VimLeavePre', {
+  callback = function() vim.fn.jobstart('killall prettierd', { detach = true }) end,
+})
