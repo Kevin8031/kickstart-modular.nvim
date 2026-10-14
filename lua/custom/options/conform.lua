@@ -8,6 +8,13 @@ require('conform').setup {
   formatters_by_ft = {
     markdown = { 'prettierd' },
     jsonc = { 'prettierd' },
+    c = { 'clang-format' },
+  },
+
+  formatters = {
+    ['clang-format'] = {
+      append_args = { '--style=gnu' },
+    },
   },
 }
 
