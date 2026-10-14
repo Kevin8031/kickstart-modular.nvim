@@ -5,6 +5,7 @@ require 'custom.options.markdown'
 require 'custom.options.spell'
 require 'custom.options.lspconfig'
 require 'custom.options.undo'
+require 'custom.options.debug'
 
 -- Save folds when closing buffer
 vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
