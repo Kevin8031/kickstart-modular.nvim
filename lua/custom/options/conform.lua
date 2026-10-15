@@ -13,7 +13,7 @@ require('conform').setup {
 
   formatters = {
     ['clang-format'] = {
-      append_args = { '--style=gnu' },
+      append_args = { '--style', '{BasedOnStyle: llvm, IndentWidth: 8, UseTab: ForIndentation}' },
     },
   },
 }
