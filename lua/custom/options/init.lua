@@ -18,5 +18,10 @@ vim.api.nvim_create_autocmd({ 'BufWinLeave' }, {
 vim.api.nvim_create_autocmd({ 'BufWinEnter' }, {
   pattern = { '*.*' },
   desc = 'load view (folds), when opening file',
-  command = 'silent! loadview',
+
+  callback = function()
+    local pre_pwd = vim.fn.getcwd()
+    vim.cmd 'silent! loadview'
+    vim.fn.chdir(pre_pwd)
+  end,
 })
