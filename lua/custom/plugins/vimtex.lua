@@ -6,6 +6,13 @@ vim.g.vimtex_view_method = 'zathura'
 
 vim.g.vimtex_compiler_latexmk = {
   out_dir = 'build',
+  options = {
+    '-shell-escape',
+    '-verbose',
+    '-file-line-error',
+    '-synctex=1',
+    '-interaction=nonstopmode',
+  },
 }
 
 local autoFollow = false

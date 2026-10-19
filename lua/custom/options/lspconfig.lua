@@ -8,8 +8,7 @@ vim.lsp.config['texlab'] = {
   settings = {
     texlab = {
       build = {
-        executable = '/dev/null',
-        args = { '--output-directory=build' },
+        args = { '-shell-escape --output-directory=build' },
         auxDirectory = 'build',
         logDirectory = 'build',
         pdfDirectory = 'build',
