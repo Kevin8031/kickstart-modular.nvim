@@ -13,6 +13,13 @@ vim.g.wiki_export = {
   viewer = 'zathura',
 }
 
+vim.g.wiki_select_method = {
+  pages = require('wiki.telescope').pages,
+  tags = require('wiki.telescope').tags,
+  toc = require('wiki.telescope').toc,
+  links = require('wiki.telescope').links,
+}
+
 vim.cmd [[
   " This is basically the same as wiki#url#resolvers#wiki, except we added
   " a line to decode the encoded URL before we resolve the path.
