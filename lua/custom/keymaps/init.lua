@@ -39,8 +39,8 @@ vim.keymap.set('v', 'H', '^')
 vim.keymap.set('v', 'L', '$')
 
 -- Netrw mappings
-vim.keymap.set('n', '<leader>pe', vim.cmd.Ex, { desc = '[P]roject [E]xplore (Open Netrw)' })
-vim.keymap.set('n', '<leader>pE', vim.cmd.Vex, { desc = '[P]roject V[E]xplore (Open Netrw in side view)' })
+vim.keymap.set('n', '<leader>pe', vim.cmd.Lex, { desc = '[P]roject [E]xplore (Open Netrw in side view)' })
+vim.keymap.set('n', '<leader>pE', vim.cmd.Ex, { desc = '[P]roject [E]xplore (Open Netrw full view)' })
 
 -- Close buffer
 vim.keymap.set('n', '<leader>bd', vim.cmd.bdelete, { desc = '[B]uffer [D]elete' })
