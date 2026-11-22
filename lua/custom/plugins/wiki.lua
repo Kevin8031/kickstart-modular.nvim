@@ -12,3 +12,36 @@ vim.g.wiki_export = {
   view = true,
   viewer = 'zathura',
 }
+
+vim.cmd [[
+  " This is basically the same as wiki#url#resolvers#wiki, except we added
+  " a line to decode the encoded URL before we resolve the path.
+  function! MyWikiResolver(url) abort
+    let l:url = deepcopy(a:url)
+
+    let l:url.anchor = wiki#url#utils#extract_anchor(l:url.stripped)
+
+    let l:path = split(l:url.stripped, '#', 1)[0]
+    let l:path = wiki#url#utils#url_decode(l:path)
+    let l:url.path = wiki#url#utils#resolve_path(l:path, l:url.origin)
+
+    return l:url
+  endfunction
+
+  " Change the wiki scheme resolver
+  let g:wiki_link_schemes = {
+        \ 'wiki': {
+        \   'resolver': function('MyWikiResolver'),
+        \ }
+        \}
+
+  " Only change the url_transform - will keep other parts at default settings
+  let g:wiki_link_creation = {
+        \ 'md': {
+        \   'url_transform': { x -> wiki#url#utils#url_encode(x) },
+        \ },
+        \ 'wiki': {
+        \   'url_transform': { x -> wiki#url#utils#url_encode(x) },
+        \ },
+        \}
+]]
