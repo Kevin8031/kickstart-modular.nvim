@@ -81,3 +81,8 @@ vim.keymap.set('n', '<leader>wj', function()
   local nline = line:sub(0, pos) .. '# ' .. date .. line:sub(pos + 1)
   vim.api.nvim_set_current_line(nline)
 end, { desc = '[W]iki [J]ournal Date (Write date on current line)' })
+
+vim.keymap.set('n', '<leader>gd', function()
+  local date = tostring(os.date '%Y-%m-%d')
+  vim.api.nvim_put({ date }, '', true, true)
+end, { desc = '[G]et [D]ate' })
