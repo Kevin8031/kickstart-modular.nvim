@@ -9,6 +9,7 @@ require('conform').setup {
     markdown = { 'prettierd' },
     jsonc = { 'prettierd' },
     c = { 'clang-format' },
+    cpp = { 'clang-format' },
   },
 
   formatters = {
